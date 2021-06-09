@@ -49,10 +49,32 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget _buildQuizCard(
       Quiz quiz, double width, double height) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white),
-      ),
-    );
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.white),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.fromLTRB(
+                  0, width * 0.024, 0, width * 0.024),
+              child: Text(
+                'Q' + (_currentIndex + 1).toString() + '.',
+                style: TextStyle(
+                  fontSize: width * 0.06,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              width: width * 0.8,
+              padding: EdgeInsets.only(top: width * 0.012),
+              child: Text(
+                quiz.title,
+              ),
+            )
+          ],
+        ));
   }
 }

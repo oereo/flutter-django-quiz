@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:first/model/model_quiz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -70,10 +71,17 @@ class _QuizScreenState extends State<QuizScreen> {
             Container(
               width: width * 0.8,
               padding: EdgeInsets.only(top: width * 0.012),
-              child: Text(
-                quiz.title,
-              ),
-            )
+              child: AutoSizeText(quiz.title,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  style: TextStyle(
+                    fontSize: width * 0.048,
+                    fontWeight: FontWeight.bold,
+                  )),
+            ),
+            Expanded(
+              child: Container(),
+            ),
           ],
         ));
   }

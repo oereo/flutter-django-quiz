@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:first/model/model_quiz.dart';
+import 'package:first/widget/widget_candidate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -82,7 +83,37 @@ class _QuizScreenState extends State<QuizScreen> {
             Expanded(
               child: Container(),
             ),
+            Column(
+              children: _buildCandidates(width, quiz),
+            ),
           ],
         ));
+  }
+
+  List<Widget> _buildCandidates(double width, Quiz quiz) {
+    List<Widget> _children = [];
+    for (int i = 0; i < 4; i++) {
+      _children.add(CandWidget(
+          index: i,
+          text: quiz.candidates[i],
+          width: width,
+          answerState: _answerState[i],
+          tap: () {
+            setState(() {
+              for (int j = 0; j < 4; j++) {
+                if (i == j) {
+                  _answerState[j] = true;
+                  _answers[_currentIndex] = j;
+                } else {
+                  _answerState[j] = false;
+                }
+              }
+            });
+          }));
+      _children.add(Padding(
+        padding: EdgeInsets.all(width * 0.024),
+      ));
+    }
+    return _children;
   }
 }

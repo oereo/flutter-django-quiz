@@ -111,7 +111,7 @@ class _QuizScreenState extends State<QuizScreen> {
             });
           }));
       _children.add(Padding(
-        padding: EdgeInsets.all(width * 0.024),
+        padding: EdgeInsets.all(width * 0.012),
       ));
     }
     return _children;

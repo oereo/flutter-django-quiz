@@ -24,6 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
       'candidates': ['a', 'b', 'c', 'd'],
       'answer': 0
     }),
+    Quiz.fromMap({
+      'title': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
   ];
   @override
   Widget build(BuildContext context) {

@@ -12,8 +12,8 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  List<int> _answers = [-1, -1, -1];
-  List<bool> _answerState = [false, false, false];
+  List<int> _answers = [-1, -1, -1, -1];
+  List<bool> _answerState = [false, false, false, false];
   int _currentIndex = 0;
 
   @override
@@ -31,7 +31,7 @@ class _QuizScreenState extends State<QuizScreen> {
               border: Border.all(color: Colors.deepPurple),
             ),
             width: width * 0.85,
-            height: height * 0.5,
+            height: height * 0.6,
             child: Swiper(
               physics: NeverScrollableScrollPhysics(),
               loop: false,
@@ -52,15 +52,15 @@ class _QuizScreenState extends State<QuizScreen> {
       Quiz quiz, double width, double height) {
     return Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.white),
-        ),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: Colors.white),
+            color: Colors.white),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
               padding: EdgeInsets.fromLTRB(
-                  0, width * 0.024, 0, width * 0.024),
+                  0, width * 0.012, 0, width * 0.012),
               child: Text(
                 'Q' + (_currentIndex + 1).toString() + '.',
                 style: TextStyle(
@@ -71,7 +71,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
             Container(
               width: width * 0.8,
-              padding: EdgeInsets.only(top: width * 0.012),
+              padding: EdgeInsets.only(top: width * 0.024),
               child: AutoSizeText(quiz.title,
                   textAlign: TextAlign.center,
                   maxLines: 2,
@@ -110,9 +110,11 @@ class _QuizScreenState extends State<QuizScreen> {
               }
             });
           }));
-      _children.add(Padding(
-        padding: EdgeInsets.all(width * 0.012),
-      ));
+      _children.add(
+        Padding(
+          padding: EdgeInsets.all(width * 0.024),
+        ),
+      );
     }
     return _children;
   }

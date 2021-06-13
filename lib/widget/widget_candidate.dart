@@ -27,7 +27,7 @@ class _CandWidgetState extends State<CandWidget> {
             widget.width * 0.048,
             widget.width * 0.024,
             widget.width * 0.048,
-            widget.width * 0.048),
+            widget.width * 0.024),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Colors.deepPurple),
@@ -38,7 +38,7 @@ class _CandWidgetState extends State<CandWidget> {
             child: Text(
               widget.text,
               style: TextStyle(
-                fontSize: widget.width * 0.035,
+                fontSize: widget.width * 0.040,
                 color: widget.answerState
                     ? Colors.white
                     : Colors.black,

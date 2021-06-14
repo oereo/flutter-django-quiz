@@ -89,7 +89,7 @@ class _QuizScreenState extends State<QuizScreen> {
               children: _buildCandidates(width, quiz),
             ),
             Container(
-                padding: EdgeInsets.all(width * 0.024),
+                padding: EdgeInsets.all(width * 0.018),
                 child: Center(
                     child: ButtonTheme(
                         minWidth: width * 0.5,
@@ -163,7 +163,7 @@ class _QuizScreenState extends State<QuizScreen> {
           }));
       _children.add(
         Padding(
-          padding: EdgeInsets.all(width * 0.024),
+          padding: EdgeInsets.all(width * 0.018),
         ),
       );
     }
